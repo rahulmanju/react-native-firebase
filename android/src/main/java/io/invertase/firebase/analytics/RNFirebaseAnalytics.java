@@ -32,9 +32,14 @@ public class RNFirebaseAnalytics extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void logEvent(final String name, @Nullable final ReadableMap params) {
+  try{
     FirebaseAnalytics
       .getInstance(getReactApplicationContext())
       .logEvent(name, Arguments.toBundle(params));
+      }catch(Exception e)
+      {
+
+      }
   }
 
   /**
