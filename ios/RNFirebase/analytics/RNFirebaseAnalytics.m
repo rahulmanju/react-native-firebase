@@ -9,7 +9,12 @@
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(logEvent:(NSString *)name props:(NSDictionary *)props) {
-  [FIRAnalytics logEventWithName:name parameters:props];
+@try{
+    [FIRAnalytics logEventWithName:name parameters:props];
+  }
+   @catch (NSException * e) {
+
+   }
 }
 
 RCT_EXPORT_METHOD(setAnalyticsCollectionEnabled:(BOOL) enabled) {
