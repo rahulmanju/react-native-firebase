@@ -71,13 +71,6 @@ export default class Analytics extends ModuleBase {
         `analytics.logEvent(): Event name '${name}' is invalid. Names should contain 1 to 32 alphanumeric characters or underscores.`
       );
     }
-
-    // maximum number of allowed params check
-    if (params && Object.keys(params).length > 25)
-      throw new Error(
-        'analytics.logEvent(): Maximum number of parameters exceeded (25).'
-      );
-
     // Parameter names can be up to 24 characters long and must start with an alphabetic character
     // and contain only alphanumeric characters and underscores. Only String, long and double param
     // types are supported. String parameter values can be up to 36 characters long. The "firebase_"
